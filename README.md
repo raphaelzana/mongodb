@@ -34,3 +34,5 @@ GET http://localhost:8089/api/v1/employees
 
 
 References: https://www.javaguides.net/2019/12/spring-boot-mongodb-crud-example-tutorial.html
+
+https://javatodev.com/docker-compose-for-spring-boot-with-mongodb/
