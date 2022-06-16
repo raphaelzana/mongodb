@@ -1,4 +1,4 @@
-# Dockerizing Spring Boot + Mongo DB
+# Dockerizing Spring Boot + Mongo DB + Rabbit MQ
 
 Containerization of Spring Boot App, Mongo DB and Rabbit MQ
 
