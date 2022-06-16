@@ -38,7 +38,8 @@ DELETE http://localhost:8089/api/v1/employees/{id}
 ## Get All Employee Rest API - Get HTTP Request 
 GET http://localhost:8089/api/v1/employees
 
-## Rabbit MQ Admin - http://localhost:15672 with credentials. 
+## Rabbit MQ Admin
+http://localhost:15672
 
 **User**: guest 
 
