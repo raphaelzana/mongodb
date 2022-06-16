@@ -1,12 +1,13 @@
 version: "3.7"
 services:
-  api_service:
-    build: .
-    restart: always
-    ports:
-      - 8089:8089
-    depends_on:
-      - mongodb
+  rabbitmq:
+      image: rabbitmq:3-management
+      container_name: rabbitmq  
+      restart: always
+      ports:
+        - "15672:15672"
+        - "5672:5672"
+        
   mongodb:
     image: mongo:latest # use the latest image.
     container_name: mongodb
@@ -18,3 +19,18 @@ services:
       - 27017:27017
     volumes: # optional to preserve database after container is deleted.
       - ./database-data:/data/db
+      
+  api_service:
+    image: api_service
+    container_name: api_service_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8089:8089
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - mongodb
+      - rabbitmq
